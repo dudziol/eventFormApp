@@ -1,0 +1,26 @@
+{
+  "name": "eventformapp",
+  "version": "1.0.0",
+  "description": "\"# eventFormApp\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dudziol/eventFormApp.git"
+  },
+  "author": "kamil_dudek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dudziol/eventFormApp/issues"
+  },
+  "homepage": "https://github.com/dudziol/eventFormApp#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "jasmine": "^3.1.0",
+    "mongoose": "^5.1.0"
+  }
+}

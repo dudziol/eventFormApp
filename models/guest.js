@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 
 var guestSchema = new mongoose.Schema({
-	name: String,
+	firstName: String,
 	lastName: String,
 	email: String,
 	date: String

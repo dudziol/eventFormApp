@@ -4,7 +4,8 @@
   "description": "\"# eventFormApp\"",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test-init": "./node_modules/.bin/jasmine init",
+    "test": "./node_modules/.bin/jasmine"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,9 @@
     "body-parser": "^1.18.2",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
-    "jasmine": "^3.1.0",
     "mongoose": "^5.1.0"
+  },
+  "devDependencies": {
+    "jasmine": "^3.1.0"
   }
 }

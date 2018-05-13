@@ -17,7 +17,14 @@ app.get("/", function(req, res){
 });
 
 app.post("/", function(req, res){
-	res.send("POSTED");
+	// res.send("POSTED");
+	Guest.create(req.body.guest, function(err, newGuest){
+		if(err){
+			res.render("index");
+		}else{
+			res.redirect("/");
+		}
+	});
 });
 
 app.listen(3000, function(){

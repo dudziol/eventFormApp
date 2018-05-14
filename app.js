@@ -20,6 +20,7 @@ app.post("/", function(req, res){
 	// res.send("POSTED");
 	Guest.create(req.body.guest, function(err, newGuest){
 		if(err){
+			console.log(err);
 			res.render("index");
 		}else{
 			res.redirect("/");

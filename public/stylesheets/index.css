@@ -4,6 +4,21 @@ body{
 	background: linear-gradient(to right, #26a0da, #314755); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.x {
-	border: 1px solid black;
+.formStyle{
+	border-radius: 20px;
+	background: #603813;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(left, #b29f94, #603813);
+	background: -o-linear-gradient(left, #b29f94, #603813);
+	background: linear-gradient(to right, #b29f94, #603813);  /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.formPos{
+	margin-top: 150px;
+	width: 400px;
+}
+.submitPos{
+	text-align: center;
+	margin-bottom: 20px;
+}
+.submitbtn{
+	width: 100px;
 }

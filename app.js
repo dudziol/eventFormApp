@@ -17,7 +17,7 @@ app.get("/", function(req, res){
 });
 
 app.post("/", function(req, res){
-	// res.send("POSTED");
+	// validation
 	Guest.create(req.body.guest, function(err, newGuest){
 		if(err){
 			console.log(err);

@@ -41,6 +41,11 @@ app.post("/", middleware.isRequestValid, function(req, res){
 	});
 });
 
+app.get("/:id", function(req, res){
+	req.flash("error", "The requested URL was not found.")
+	res.redirect("/");
+});
+
 app.listen(3000, function(){
 	console.log("Server running on port 3000");
 });

@@ -26,8 +26,12 @@ app.use(function(req, res, next){
 
 // ROUTES
 app.get("/", function(req, res){
-	res.render("index");
+	res.render("landing");
 });
+
+app.get("/new", function(req, res){
+	res.render("index");
+})
 
 app.post("/", middleware.isRequestValid, function(req, res){
 	Guest.create(req.body.guest, function(err, newGuest){

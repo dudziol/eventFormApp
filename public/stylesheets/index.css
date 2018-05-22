@@ -24,4 +24,11 @@
 	padding-top: 20px;
 }
 
-	
+.signUpbtn{
+	width: 300px;
+}
+.btnContainer{
+	width: 100%;
+	text-align: center;
+	margin-top: 250px;
+}

@@ -17,7 +17,7 @@ var data = [
 		element: "date",
 		notValidError: missingValueError
 	},
-]
+];
 
 function isFormValid(data){
 	var element, isElementValid;

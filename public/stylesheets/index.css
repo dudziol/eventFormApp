@@ -6,7 +6,7 @@
 
 }
 .formPos{
-	margin-top: 150px;
+	margin-top: 115px;
 	width: 400px;
 }
 .submitPos{
@@ -19,6 +19,9 @@
 .error{
 	color: #800020;
 	font-weight: bold;
+}
+#flashMsg{
+	padding-top: 20px;
 }
 
 	

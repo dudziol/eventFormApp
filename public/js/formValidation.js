@@ -1,23 +1,21 @@
+var missingValueError = "This field is required";
+
 var data = [
 	name = {
 		element: "name",
-		missingValueError: "This field is required",
 		notValidError: "You can use only: A-Z, a-z"
 	},
 	lastName = {
 		element: "lastName",
-		missingValueError: "This field is required",
 		notValidError: "You can use only: A-Z, a-z"
 	},
 	email = {
 		element: "email",
-		missingValueError: "This field is required",
 		notValidError: "You have to follow pattern: abc@abc"
 	},
 	date = {
 		element: "date",
-		missingValueError: "This field is required",
-		notValidError: "This field is required"
+		notValidError: missingValueError
 	},
 ]
 
@@ -28,7 +26,7 @@ function isFormValid(data){
 		if(!element.validity.valid){
 			if(element.validity.valueMissing){
 				isElementValid = false;
-				addMessage(data[i].element, data[i].missingValueError);
+				addMessage(data[i].element, missingValueError);
 				break;
 			} else{
 				addMessage(data[i].element, data[i].notValidError);
@@ -43,13 +41,16 @@ function isFormValid(data){
 	return isElementValid;
 }
 
+function createMessageSelector(id){
+	return $("#"+id+"Message");
+}
 function addMessage(id, message){
-	$("#"+id+"Message").text(message);
-    $("#"+id+"Message").addClass("error");
+	createMessageSelector(id).text(message);
+    createMessageSelector(id).addClass("error");
 }
 function removeMessage(id, message){
-	$("#"+id+"Message").text("");
-    $("#"+id+"Message").removeClass("error");
+	createMessageSelector(id).text("");
+    createMessageSelector(id).removeClass("error");
 }
 
 $("#submit").on("click", function(event){

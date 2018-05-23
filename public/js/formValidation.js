@@ -11,7 +11,7 @@ var data = [
 	},
 	email = {
 		element: "email",
-		notValidError: "You have to follow pattern: abc@abc"
+		notValidError: "You have to follow pattern: xxx@xxx.xx"
 	},
 	date = {
 		element: "date",

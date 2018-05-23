@@ -9,7 +9,6 @@ var express = require("express"),
 	validator = require('validator'),
 	Guest = require("./models/guest");
 
-
 // APP CONFIG
 mongoose.connect("mongodb://localhost/eventForm_v2");
 app.set("view engine", "ejs");

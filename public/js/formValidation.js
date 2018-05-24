@@ -22,7 +22,7 @@ var data = [
 function isFormValid(data){
 	var element, isElementValid;
 	for(var i=0; i<data.length; i++){
-		element = $("#" + data[i].element)[0];
+		element = document.getElementById(data[i].element);
 		if(!element.validity.valid){
 			if(element.validity.valueMissing){
 				isElementValid = false;
@@ -39,21 +39,21 @@ function isFormValid(data){
 		}
 	}
 	return isElementValid;
-}
+};
 
 function createMessageSelector(id){
-	return $("#"+id+"Message");
-}
+	return document.getElementById(id + "Message");
+};
 function addMessage(id, message){
-	createMessageSelector(id).text(message);
-    createMessageSelector(id).addClass("error");
-}
-function removeMessage(id, message){
-	createMessageSelector(id).text("");
-    createMessageSelector(id).removeClass("error");
-}
+	createMessageSelector(id).classList.add("error");
+	createMessageSelector(id).innerHTML = message;
+};
+function removeMessage(id){
+	createMessageSelector(id).classList.remove("error");
+	createMessageSelector(id).innerHTML = "";
+};
 
-$("#submit").on("click", function(event){
+document.getElementById("submit").addEventListener("click", function(event){
 	isFormValid(data);
 	if(!isFormValid(data)){
 		event.preventDefault();

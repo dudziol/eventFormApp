@@ -9,24 +9,25 @@ function createErrorMessage(id, message){
 }
 
 function validateFormHelper(id, message){
-	if(id === "name"){
+	if(id === "name" || id === "lastName"){
 		createErrorMessage(id, message.nameError);
 	}else if(id === "email"){
 		createErrorMessage(id, message.emailError);
-	} else{
+	} else if(id === "date"){
 		createErrorMessage(id, message.missingValueError);
 	}
 }
 
 function Form(form, errorMessages){
 	this.errorMessages = errorMessages;
-	this.isFormValid = false;
 	this.removeFields = function(){
 		this.fields = [];
 	}
 	this.createFields = function(){
 		for (let i=0; i<form.length; i++){
-			this.fields.push(new Field(form[i].id, form[i].value, form[i].pattern));
+			if(form[i].type !== "submit"){
+				this.fields.push(new Field(form[i].id, form[i].value, form[i].pattern));
+			}
 		}
 	}
 	this.validateForm = function(){
@@ -61,25 +62,19 @@ function Field(id, value, pattern){
 	this.isEmpty = true;
 	this.isPatternValid = false;
 	this.validateField = function(){
-		if(this.value === ""){
-			this.isEmpty = true;
-		} else{
+		if(this.value !== ""){
 			this.isEmpty = false;
 		}
 		if(this.pattern.test(this.value)){
 			this.isPatternValid = true;
-		} else{
-			this.isPatternValid = false;
 		}
 		if((this.isEmpty === false)&&(this.isPatternValid === true)){
 			this.isFieldValid = true;
-		} else{
-			this.isFieldValid = false;
 		}
 	}
 }
 
-var Form = new Form(document.querySelectorAll("div > input"), errorMessages);
+var Form = new Form(document.querySelectorAll("form input"), errorMessages);
 document.getElementById("submit").addEventListener("click", function(event){
 	Form.removeFields();
 	Form.createFields();
